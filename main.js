@@ -2,6 +2,7 @@ const alphabetDiv = document.getElementById('alphabet')
 const wpm = document.getElementById('wpm')
 const time = document.getElementById('time')
 const shortcutTip = document.getElementById('restart')
+const textDiv = document.getElementById('text')
 
 shortcutTip.addEventListener('mouseover', function() {
     shortcutTip.innerText = 'ALT+R'
@@ -14,6 +15,7 @@ shortcutTip.addEventListener('mouseover', function() {
 
 
 const restart = () => {
+    textDiv.classList.remove('finish-signal')
     alphabetDiv.innerHTML = '';
     wpm.innerHTML = '';
     time.innerHTML = '';
@@ -57,9 +59,15 @@ const restart = () => {
         const wpm = text.split('').length / seconds * 60 / 4.7;
         document.getElementById('wpm').innerText = `WPM ${parseInt(wpm)}`;
         document.getElementById('time').innerText = `Time ${seconds}`;
+        textDiv.classList.add('finish-signal')
         document.removeEventListener("keydown", keydown);
         characters.forEach(char => {
+            char.classList.add('finished-transition')
+          
+        })
+        characters.forEach(char => {
             char.classList.add('finished')
+            
         })
         }
   
