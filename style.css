@@ -1,0 +1,103 @@
+body {
+    background-color: #1f1f1f;
+    font-family: sans-serif;
+    color: white;
+    align-items: center;
+    text-align: center;
+}
+
+#title {
+    font-size: 50px
+}
+
+#text {
+    height: 100px;
+    width: 1200px;
+    background-color: #2f2f2f;
+    border-radius: 30px;
+    margin: 0 auto;
+}
+
+#stats {
+    text-align: center;
+}
+
+#wpm {
+    display: inline-block;
+    background-color: #2f2f2f;
+    vertical-align: middle;
+    line-height: 100px;
+    height: 100px;
+    width: 300px;
+    border-radius: 30px;
+    margin: 20px;
+    font-size: 25px;
+}
+
+#time {
+    display: inline-block;
+    background-color: #2f2f2f;
+    vertical-align: middle;
+    line-height: 100px;
+    height: 100px;
+    width: 300px;
+    border-radius: 30px;
+    margin: 20px;
+    font-size: 25px;
+}
+
+#restart {
+    width: 300px;
+    height: 100px;
+    border-radius: 23px;
+    font-size: 30px;
+    vertical-align: middle;
+    border: none;
+    background-color: #cfba00;
+    color: white;
+}
+
+#restart:focus {
+    outline: none;
+}
+
+#restart:hover {
+    transition: background-color 0.2s ease;
+    background-color: white;
+    transition: color 1s ease;
+    color: black;
+}
+
+#alphabet {
+    padding: 20px;
+}
+
+.currentChar {
+    color: white !important;
+    background-color: #cfba00;
+}
+
+
+.spanChar {
+    color: #cfba99;
+    font-size: 50px;
+    padding: 10px;
+}
+
+.correct {
+    color: white;
+}
+
+.finished-transition {
+    color: red;
+}
+
+.finished {
+    transition: color 2s ease;
+    color: white;
+}
+
+.finish-signal {
+    transition: background-color 0.3s ease;
+    background-color: #cfba00 !important;
+}
