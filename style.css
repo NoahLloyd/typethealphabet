@@ -57,9 +57,15 @@ body {
     color: white;
 }
 
+#restart:focus {
+    outline: none;
+}
+
 #restart:hover {
     transition: background-color 0.2s ease;
-    background-color: #000;
+    background-color: white;
+    transition: color 1s ease;
+    color: black;
 }
 
 #alphabet {
@@ -78,15 +84,20 @@ body {
     padding: 10px;
 }
 
-.incorrect {
-    color: red;
-}
-
 .correct {
     color: white;
 }
 
+.finished-transition {
+    color: red;
+}
+
 .finished {
-    transition: color 0.5s ease;
-    color: #cfba99;
+    transition: color 2s ease;
+    color: white;
+}
+
+.finish-signal {
+    transition: background-color 0.3s ease;
+    background-color: #cfba00 !important;
 }
