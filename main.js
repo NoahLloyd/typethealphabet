@@ -61,10 +61,7 @@ const restart = () => {
         document.getElementById('time').innerText = `${seconds}`;
         textDiv.classList.add('finish-signal')
         document.removeEventListener("keydown", keydown);
-        characters.forEach(char => {
-            char.classList.add('finished-transition')
-          
-        })
+
         characters.forEach(char => {
             char.classList.add('finished')
             
