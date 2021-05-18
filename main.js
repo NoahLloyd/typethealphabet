@@ -57,8 +57,8 @@ const restart = () => {
         const delta = endTime - timer;
         const seconds = delta / 1000;
         const wpm = text.split('').length / seconds * 60 / 4.7;
-        document.getElementById('wpm').innerText = `WPM ${parseInt(wpm)}`;
-        document.getElementById('time').innerText = `Time ${seconds}`;
+        document.getElementById('wpm').innerText = `${parseInt(wpm)}`;
+        document.getElementById('time').innerText = `${seconds}`;
         textDiv.classList.add('finish-signal')
         document.removeEventListener("keydown", keydown);
         characters.forEach(char => {
