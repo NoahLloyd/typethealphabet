@@ -96,10 +96,6 @@ body {
     color: white;
 }
 
-.finished-transition {
-    color: red;
-}
-
 .finished {
     transition: color 2s ease;
     color: white;
