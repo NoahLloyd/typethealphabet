@@ -1,5 +1,5 @@
 # typethealphabet
 My website "TypeTheAlphabet.xyz"
-A speed alphabet typing website to type the alphabet as fast as possible with a wpm tracker and timer
+A speed alphabet typing website to type the alphabet as fast as possible with a speed tracker and timer
 
-One of my first projects ever so I won't delete it
+Completely new version. /old is the old one I made as one of my first projects

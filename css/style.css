@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+:root {
+  --dark: #24271f;
+  --primary: #ffac09;
+  --green: #22ab43;
+  --red: #994642;
+  --light: #faf6ef;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto';
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 2rem;
+  font-size: 1.8rem;
+}
+.leaderboard {
+  width: 20%;
+}
+.game {
+  background-color: var(--primary);
+  padding: 1rem 1.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.game--letter {
+  font-size: 18rem;
+}
+.game--alphabet {
+  font-size: 5rem;
+  margin: 0;
+}
+.stats {
+  width: 20%;
+}
+.incorrect {
+  color: var(--red);
+}
+.correct {
+  color: var(--green);
+}
+.stats--stat__title {
+  display: inline-block;
+  margin-right: 1rem;
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+.stats--stat__value {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 2.9rem;
+}

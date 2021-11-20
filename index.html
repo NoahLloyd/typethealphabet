@@ -1,29 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Type The Alphabet | Learn and practice typing from A-Z fast</title>
-    <meta name="description" content="Time your speed of typing the alphabet, beat your personal best, keep practicing, and go for the world record!">
-    <meta name=”robots” content=”index, follow”>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
-    <body> 
-    <h1 id="title">TypeTheAlphabet.xyz</h1>
-
-    <div id="text"><div id=alphabet></div></div>
-    <div id="stats-restart">
-        <span id="outer-wpm">WPM <span id="wpm"></span></span>
-        <button accesskey="r" id=restart onclick="restart();">Restart</button>
-        <span id="outer-time">TIME <span id="time"></span></span>
-    </div>
-    <script src="main.js"></script>
-
-    <div id="leaderboard"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type the Alphabet .xyz</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <ul class="navigation">
+        <li class="navigation--link">with spaces</li>
+        <li class="navigation--link">
+          <h1 class="navigation--title">Type the Alphabet</h1>
+        </li>
+        <li class="navigation--link">backwards</li>
+      </ul>
+      <button class="sign-in">Sign up/in</button>
+    </header>
+    <main class="main">
+      <section class="leaderboard">
+        <h2 class="leaderboard--title">Leaderboard</h2>
+        <table class="leaderboard--table">
+          <tbody></tbody>
+        </table>
+      </section>
+      <section class="game">
+        <h1 class="game--letter" id="letter">a</h1>
+        <p class="game--alphabet">
+          <span id="a">a</span><span id="b">b</span
+          ><span id="c">c</span><span id="d">d</span
+          ><span id="e">e</span><span id="f">f</span
+          ><span id="g">g</span><span id="h">h</span
+          ><span id="i">i</span><span id="j">j</span
+          ><span id="k">k</span><span id="l">l</span
+          ><span id="m">m</span><span id="n">n</span
+          ><span id="o">o</span><span id="p">p</span
+          ><span id="q">q</span><span id="r">r</span
+          ><span id="s">s</span><span id="t">t</span
+          ><span id="u">u</span><span id="v">v</span
+          ><span id="w">w</span><span id="x">x</span
+          ><span id="y">y</span><span id="z">z</span>
+        </p>
+      </section>
+      <section class="stats">
+        <article class="stats--stat">
+          <h2 class="stats--stat__title">Time </h2>
+          <div class="stats--stat__value" id="time">0.000</div>
+        </article>
+        <article class="stats--stat">
+          <h2 class="stats--stat__title">Speed</h2>
+          <div class="stats--stat__value" id="speed">0</div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

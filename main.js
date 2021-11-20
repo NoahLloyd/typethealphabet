@@ -1,76 +1,83 @@
-const alphabetDiv = document.getElementById('alphabet')
-const wpm = document.getElementById('wpm')
-const time = document.getElementById('time')
-const shortcutTip = document.getElementById('restart')
-const textDiv = document.getElementById('text')
+let currentLetter = "a";
+const alphabet = "abcdefghijklmnopqrstuvwxyz";
+const bigLetter = document.getElementById("letter");
+const time = document.getElementById("time");
+const speed = document.getElementById("speed");
+let startTime;
+let gameOver = false;
 
-shortcutTip.addEventListener('mouseover', function() {
-    shortcutTip.innerText = 'ALT+R'
+document.addEventListener("keydown", (e) => {
+  const pressedKey = e.key.toLowerCase();
+  const currentLetterInAlphabet = document.getElementById(currentLetter);
+  // If correct letter pressed
+  if (pressedKey === currentLetter) {
+    currentLetterInAlphabet.classList.add("correct");
 
-    setTimeout( () => {
-        shortcutTip.innerText = 'Restart'
-    },1000)
-})
+    // Start timer and track speed
+    if (pressedKey === "a") {
+      gameOver = false;
+      startTime = new Date();
+      const stopwatch = setInterval(() => {
+        if (gameOver) clearInterval(stopwatch);
+        const timeTaken = getTimeInterval(startTime, new Date());
+        time.innerText = timeTaken;
+        setTimeout(() => {
+          getAndInsertSpeed(new Date() - startTime);
+        }, 100);
+      }, 1);
+    }
 
+    // End game
+    if (pressedKey === "z") {
+      gameOver = true;
+      const timeTaken = getTimeInterval(startTime, new Date());
+      time.innerText = timeTaken;
+      bigLetter.innerText = timeTaken;
 
+      return;
+    }
 
-const restart = () => {
-    textDiv.classList.remove('finish-signal')
-    alphabetDiv.innerHTML = '';
-    wpm.innerHTML = '';
-    time.innerHTML = '';
+    // Gets the next letter
+    nextLetterIndex = alphabet.indexOf(currentLetter) + 1;
 
-    const text = 'abcdefghijklmnopqrstuvwxyz'
-  
-    const characters = text.split('').map(char => {
-        spanChar = document.createElement('span');
-        spanChar.classList.add('spanChar');
-        spanChar.innerText = char;
-        alphabetDiv.appendChild(spanChar);
-        return spanChar;
-    });
+    // Changes the current letter, and displayed letter to the next in the alphabet
+    currentLetter = alphabet[nextLetterIndex];
+    bigLetter.innerText = currentLetter;
 
-    characters[0].classList.add('currentChar')
+    // If not correct letter pressed
+  } else {
+    currentLetterInAlphabet.classList.add("incorrect");
+  }
 
-    let currentIndex = 0;
-    let currentCharacter = characters[currentIndex];  
-    let timer = 0;
-  
-    const keydown = ({ key }) => {
-      if (!timer) {
-        timer = new Date();
-      }
-  
-      if (key === currentCharacter.innerText) {
-        currentCharacter.classList.remove('currentChar');
-        currentCharacter.classList.add('correct');
-        currentCharacter = characters[++currentIndex];
+  // Reset
+  if (e.key === " " || e.key === "Tab" || e.key === "Enter") reset();
+});
 
-        if (currentIndex != text.length) {
-            currentCharacter.classList.add('currentChar');
-        }
-      }
-  
-      if (currentIndex >= characters.length) {
-        // Finished typing
-        const endTime = new Date();
-        const delta = endTime - timer;
-        const seconds = delta / 1000;
-        const wpm = text.split('').length / seconds * 60 / 4.7;
-        document.getElementById('wpm').innerText = `${parseInt(wpm)}`;
-        document.getElementById('time').innerText = `${seconds}`;
-        textDiv.classList.add('finish-signal')
-        document.removeEventListener("keydown", keydown);
+const reset = () => {
+  currentLetter = "a";
+  bigLetter.innerText = "a";
+  time.innerText = "0.000";
+  speed.innerText = "0";
+  document.querySelectorAll("span[id]").forEach((span) => {
+    span.className = "";
+  });
+};
 
-        characters.forEach(char => {
-            char.classList.add('finished')
-            
-        })
-        }
-  
-    };
-  
-    document.addEventListener("keydown", keydown);
-  };
+const getTimeInterval = (start, end) => {
+  const timeTaken = new Date(end - start);
+  const minutes = timeTaken.getMinutes();
+  const seconds = timeTaken.getSeconds();
+  const miliseconds = timeTaken.getMilliseconds();
+  let formattedTime = `${
+    minutes ? minutes + ":" : ""
+  }${seconds}:${miliseconds}`;
 
-restart()
+  // Adds extra 0's to the end if there are too few decimals
+  return formattedTime.padEnd(5 - formattedTime.length, "0");
+};
+
+const getAndInsertSpeed = (timeTaken) => {
+  const wordsWritten = alphabet.indexOf(currentLetter);
+  let WPM = Math.round((wordsWritten / 4.7 / (timeTaken / 1000)) * 60);
+  speed.innerText = WPM;
+};
