@@ -7,6 +7,14 @@
   --light: #faf6ef;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 body {
   margin: 0;
   font-family: 'Roboto';
@@ -20,9 +28,7 @@ body {
   margin: 4rem 2rem;
   font-size: 1.8rem;
 }
-.leaderboard {
-  width: 20%;
-}
+
 .game {
   background-color: var(--primary);
   padding: 1rem 1.5rem;

@@ -1,0 +1,37 @@
+.leaderboard {
+  width: 25%;
+  margin-right: 1rem;
+}
+.leaderboard--title {
+    margin: 1rem 0;
+}
+.leaderboard--table__row {
+  background-color: var(--dark);
+  color: var(--light);
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 7rem;
+}
+.leaderboard--table__heading {
+  border-bottom: 5px solid var(--primary);
+  color:  reds;
+}
+.leaderboard--table__row:nth-child(2n) {
+    opacity: 0.98;
+}
+.leaderboard--table__row > h4 {
+  padding: 1rem;
+  margin: 0;
+  display: inline-block;
+}
+.leaderboard--position {
+  background-color: var(--primary);
+  color: var(--dark);
+  text-align: center;
+}
+.leaderboard--name {
+  text-align: left;
+}
+.leaderboard--time {
+  text-align: right;
+  font-weight: 400;
+}
