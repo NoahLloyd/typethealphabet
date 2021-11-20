@@ -30,6 +30,9 @@
     border: none;
     padding: 0.8rem 2rem;
     background-color: var(--primary);
+    color: var(--dark);
+    font-weight: 800;
+    font-size: 1.3rem;
     border-radius: 3px;
     cursor: pointer;
 }
