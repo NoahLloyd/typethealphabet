@@ -81,3 +81,15 @@ const getAndInsertSpeed = (timeTaken) => {
   let WPM = Math.round((wordsWritten / 4.7 / (timeTaken / 1000)) * 60);
   speed.innerText = WPM;
 };
+const toggleDarkMode = () => {
+  console.log("asds");
+  const data = document.documentElement.dataset;
+  if (data.theme) {
+    data.theme = "";
+  } else {
+    data.theme = "dark";
+  }
+};
+document.getElementById("darkMode").addEventListener("click", () => {
+  toggleDarkMode();
+});

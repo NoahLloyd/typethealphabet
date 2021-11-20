@@ -2,8 +2,9 @@
     width: 100%;
     background-color: var(--dark );
     padding: 1.4rem 0;
-    position: relative;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    display: flex;
+    justify-content: space-between;
 }
 .navigation {
     display: flex;
@@ -24,16 +25,18 @@
 }
 
 .sign-in {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    display: inline-block;
     font-size: 1.2rem;
     margin-right: 1rem;
     border: none;
     padding: 0.8rem 2rem;
     background-color: var(--primary);
     border-radius: 3px;
+    cursor: pointer;
+}
+.dark-mode {
+    height: 64px;
+    width: 64px;
+    margin-left: 1rem;
+    fill: var(--light);
     cursor: pointer;
 }

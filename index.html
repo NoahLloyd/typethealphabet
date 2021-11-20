@@ -12,6 +12,11 @@
   </head>
   <body>
     <header class="header">
+      <svg class="dark-mode" id="darkMode">
+        <path
+          d="M56.59,32l-7.21,7.2l0.011,10.19H39.2L32,56.59l-7.2-7.199H14.61V39.21l-7.2-7.199l7.2-7.21l-0.01-10.181H24.79l7.2-7.21  l7.2,7.2H49.38v10.19L56.59,32z M44.771,37.29c2.91-7.05-0.44-15.14-7.49-18.06c-5.39-2.23-11.6-0.83-15.521,3.479  c3.051-1.97,6.881-2.31,10.23-0.92c5.64,2.33,8.32,8.8,5.99,14.44c-2.34,5.64-8.811,8.32-14.45,5.99  c-0.62-0.261-1.21-0.57-1.771-0.931c1.37,1.511,3.061,2.7,4.95,3.48C33.76,47.69,41.851,44.34,44.771,37.29z"
+        />
+      </svg>
       <ul class="navigation">
         <li class="navigation--link">with spaces</li>
         <li class="navigation--link">
@@ -22,62 +27,9 @@
       <button class="sign-in">Sign up/in</button>
     </header>
     <main class="main">
-      <section class="leaderboard">
-        <h2 class="leaderboard--title">Leaderboard</h2>
-        <article class="leaderboard--table">
-          <div class="leaderboard--table__row leaderboard--table__heading">
-            <h4 class="leaderboard--position">#</h4>
-            <h4 class="leaderboard--name">Name</h4>
-            <h4 class="leaderboard--time"><strong>Time</strong></h4>
-          </div>
-          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>          <div class="leaderboard--table__row">
-            <h4 class="leaderboard--position">1</h4>
-            <h4 class="leaderboard--name">NoahLR</h4>
-            <h4 class="leaderboard--time">1.670</h4>
-          </div>
-        </article>
-      </section>
-      <section class="game">
-        <h1 class="game--letter" id="letter">a</h1>
-        <p class="game--alphabet">
-          <span id="a">a</span><span id="b">b</span
-          ><span id="c">c</span><span id="d">d</span
-          ><span id="e">e</span><span id="f">f</span
-          ><span id="g">g</span><span id="h">h</span
-          ><span id="i">i</span><span id="j">j</span
-          ><span id="k">k</span><span id="l">l</span
-          ><span id="m">m</span><span id="n">n</span
-          ><span id="o">o</span><span id="p">p</span
-          ><span id="q">q</span><span id="r">r</span
-          ><span id="s">s</span><span id="t">t</span
-          ><span id="u">u</span><span id="v">v</span
-          ><span id="w">w</span><span id="x">x</span
-          ><span id="y">y</span><span id="z">z</span>
-        </p>
-      </section>
       <section class="stats">
         <article class="stats--stat">
-          <h2 class="stats--stat__title">Time </h2>
+          <h2 class="stats--stat__title">Time&nbsp;&nbsp;</h2>
           <div class="stats--stat__value" id="time">0.000</div>
         </article>
         <article class="stats--stat">
@@ -85,6 +37,59 @@
           <div class="stats--stat__value" id="speed">0</div>
         </article>
       </section>
+      <section class="game">
+        <h1 class="game--letter" id="letter">a</h1>
+        <p class="game--alphabet">
+          <span id="a">a</span><span id="b">b</span><span id="c">c</span
+          ><span id="d">d</span><span id="e">e</span><span id="f">f</span
+          ><span id="g">g</span><span id="h">h</span><span id="i">i</span
+          ><span id="j">j</span><span id="k">k</span><span id="l">l</span
+          ><span id="m">m</span><span id="n">n</span><span id="o">o</span
+          ><span id="p">p</span><span id="q">q</span><span id="r">r</span
+          ><span id="s">s</span><span id="t">t</span><span id="u">u</span
+          ><span id="v">v</span><span id="w">w</span><span id="x">x</span
+          ><span id="y">y</span><span id="z">z</span>
+        </p>
+      </section>
     </main>
+    <section class="leaderboard">
+      <article class="leaderboard--table">
+        <div class="leaderboard--table__row leaderboard--table__heading">
+          <h4 class="leaderboard--position">#</h4>
+          <h4 class="leaderboard--name">Name</h4>
+          <h4 class="leaderboard--time"><strong>Time</strong></h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+        <div class="leaderboard--table__row">
+          <h4 class="leaderboard--position">1</h4>
+          <h4 class="leaderboard--name">NoahLR</h4>
+          <h4 class="leaderboard--time">1.670</h4>
+        </div>
+      </article>
+    </section>
   </body>
 </html>

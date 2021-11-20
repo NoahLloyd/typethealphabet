@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 :root {
   --dark: #24271f;
+  --light: #faf6ef;
   --primary: #ffac09;
   --green: #22ab43;
   --red: #994642;
-  --light: #faf6ef;
+}
+html[data-theme='dark'] {
+  --dark: #3f1f1f;
+  --light: #000;
+  --primary: #6f4c00;
+  --green: #125b13;
+  --red: #7f1612;
 }
 
 body::-webkit-scrollbar {
@@ -23,10 +30,9 @@ body {
 }
 
 .main {
-  display: flex;
-  justify-content: space-between;
   margin: 4rem 2rem;
   font-size: 1.8rem;
+  position: relative;
 }
 
 .game {
@@ -34,16 +40,25 @@ body {
   padding: 1rem 1.5rem;
   border-radius: 50%;
   text-align: center;
+  width: 50%;
+  margin: 0 auto;
 }
 .game--letter {
-  font-size: 18rem;
+  font-size: 15rem;
 }
 .game--alphabet {
-  font-size: 5rem;
+  font-size: 3.5rem;
   margin: 0;
+  opacity: 0.9;
 }
 .stats {
-  width: 20%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  margin: 0 0 0 3rem;
+}
+.stats--stat {
+  margin: 1rem 0;
 }
 .incorrect {
   color: var(--red);
@@ -53,7 +68,7 @@ body {
 }
 .stats--stat__title {
   display: inline-block;
-  margin-right: 1rem;
+  margin: 0 1rem 0 0;
   font-weight: 300;
   font-size: 2.3rem;
 }
