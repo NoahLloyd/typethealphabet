@@ -26,6 +26,14 @@ body {
   color: var(--dark);
 }
 
+.restart-info {
+  font-size: 2rem;
+  display: block;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
 .main {
   margin: 4rem 2rem;
   font-size: 1.8rem;
@@ -37,8 +45,8 @@ body {
   padding: 1rem 1.5rem;
   border-radius: 50%;
   text-align: center;
-  width: 50%;
-  height: 45vw;
+  width: 75vh;
+  height: 68vh;
   margin: 0 auto;
   position: relative;
   display: flex;
