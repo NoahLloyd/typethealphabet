@@ -6,7 +6,7 @@
   --green: #22ab43;
   --red: #994642;
 }
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   --dark: #3f1f1f;
   --light: #000;
   --primary: #6f4c00;
@@ -17,14 +17,11 @@ html[data-theme='dark'] {
 body::-webkit-scrollbar {
   display: none;
 }
-/* Hide scrollbar for IE, Edge and Firefox */
 body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   margin: 0;
-  font-family: 'Roboto';
+  font-family: "Roboto";
   background-color: var(--light);
   color: var(--dark);
 }
@@ -41,10 +38,60 @@ body {
   border-radius: 50%;
   text-align: center;
   width: 50%;
+  height: 45vw;
   margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.shake {
+  animation: shake 0.2s 0s 5;
+}
+.slow-shake {
+  animation: shake 10s 0s infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(5px, 5px);
+  }
+  20% {
+    transform: translate(-7px, -5px);
+  }
+  30% {
+    transform: translate(-8px, 8px);
+  }
+  40% {
+    transform: translate(8px, -7px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  60% {
+    transform: translate(-7px, -5px);
+  }
+  70% {
+    transform: translate(-8px, 8px);
+  }
+  80% {
+    transform: translate(8px, -7px);
+  }
+  90% {
+    transform: translate(8px, -7px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes reverse-shake {
 }
 .game--letter {
   font-size: 15rem;
+  margin: 0;
 }
 .game--alphabet {
   font-size: 3.5rem;
@@ -52,7 +99,7 @@ body {
   opacity: 0.9;
 }
 .stats {
-  position: absolute; 
+  position: absolute;
   top: 0;
   left: 0;
   margin: 0 0 0 3rem;

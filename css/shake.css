@@ -1,0 +1,83 @@
+.slow-shake {
+  animation: shake 20s 0s infinite;
+}
+.reverse-shake {
+    animation: reverse-shake 20s 0s infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+    border-radius: 50%;
+  }
+  10% {
+    transform: translate(5px, 5px);
+    border-radius: 45%;
+  }
+  20% {
+    transform: translate(-7px, -5px);
+    border-radius: 50%;
+  }
+  30% {
+    transform: translate(-8px, 8px);
+  }
+  40% {
+    transform: translate(8px, -7px);
+    border-radius: 40%;
+  }
+  50% {
+    transform: translate(-15px, -2px);
+  }
+  60% {
+    transform: translate(6px, -9px);
+    border-radius: 50%;
+  }
+  70% {
+    transform: translate(10px, 4px);
+  }
+  80% {
+    transform: translate(10px, -4px);
+    border-radius: 46%;
+  }
+  90% {
+    transform: translate(3px, 3px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+    border-radius: 50%;
+  }
+}
+@keyframes reverse-shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(-5px, -5px);
+  }
+  20% {
+    transform: translate(7px, 5px);
+  }
+  30% {
+    transform: translate(8px, -8px);
+  }
+  40% {
+    transform: translate(-8px, 7px);
+  }
+  50% {
+    transform: translate(15px, 2px);
+  }
+  60% {
+    transform: translate(-6px, 9px);
+  }
+  70% {
+    transform: translate(-10px, -4px);
+  }
+  80% {
+    transform: translate(-10px, 4px);
+  }
+  90% {
+    transform: translate(-3px, -3px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}

@@ -5,6 +5,7 @@ const time = document.getElementById("time");
 const speed = document.getElementById("speed");
 let startTime;
 let gameOver = false;
+let stopwatch;
 
 document.addEventListener("keydown", (e) => {
   const pressedKey = e.key.toLowerCase();
@@ -17,7 +18,7 @@ document.addEventListener("keydown", (e) => {
     if (pressedKey === "a") {
       gameOver = false;
       startTime = new Date();
-      const stopwatch = setInterval(() => {
+      stopwatch = setInterval(() => {
         if (gameOver) clearInterval(stopwatch);
         const timeTaken = getTimeInterval(startTime, new Date());
         time.innerText = timeTaken;
@@ -29,11 +30,15 @@ document.addEventListener("keydown", (e) => {
 
     // End game
     if (pressedKey === "z") {
+      if (gameOver) return;
       gameOver = true;
       const timeTaken = getTimeInterval(startTime, new Date());
       time.innerText = timeTaken;
       bigLetter.innerText = timeTaken;
-
+      document.getElementById("game").classList.add("shake");
+      setTimeout(() => {
+        document.getElementById("game").classList.remove("shake");
+      }, 1000);
       return;
     }
 
@@ -50,7 +55,11 @@ document.addEventListener("keydown", (e) => {
   }
 
   // Reset
-  if (e.key === " " || e.key === "Tab" || e.key === "Enter") reset();
+  if (e.key === " " || e.key === "Tab" || e.key === "Enter") {
+    time.innerText = "";
+    clearInterval(stopwatch);
+    reset();
+  }
 });
 
 const reset = () => {
